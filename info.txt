@@ -1,0 +1,3 @@
+Nombre y Apellido: Joaquín Pérez
+Nro de Legajo: 5110
+Mi enlace al repositorio en GitHub: https://github.com/JRproyects/SimulacroPrimerParcial2025
