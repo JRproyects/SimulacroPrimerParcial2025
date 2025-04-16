@@ -29,7 +29,7 @@ html{
 .contenedor-header header .logo a{
     font-family: 'Righteous';
     font-size: 36px;
-    color: #1cb697;
+    color: #586e68;
     text-decoration: none;
 
 }
@@ -49,10 +49,10 @@ html{
 
 }
 .contenedor-header header nav ul li a:hover{
-    color: #15d6b0;
+    color: #063159;
 }
 .nav-responsive{
-    background-color: #1cb697;
+    background-color: #586e68;
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
@@ -62,10 +62,10 @@ html{
 }
 /*seccion INICIO*/
 .inicio{
-    background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),url(img/fondo.jpg);
+    background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),url(img/matrix.gif);
     background-size: cover;
     height:100vh;
-    color: #fff;
+    color: #fff;    
     display: flex;
     align-items: center;
 
@@ -80,7 +80,7 @@ html{
 }
 .inicio .contenido-banner img{
     margin-top:40px ;
-    border: 10px solid  #1cb698;
+    border: 5px solid  #586e68;
     display: block;
     width: 80%;
     margin: auto;
@@ -112,11 +112,11 @@ html{
 
 }
 .inicio .contenido-banner .redes a:hover{
-    background-color: #1cb698;
+    background-color: #586e68;
 }
 /*SOBRE MI*/
 .sobremi{
-    background-color: rgb(2, 2, 40);
+    background-color: rgb(2, 7, 11);
     color: #fff;
     padding: 50px 20px;
 }
@@ -126,7 +126,7 @@ html{
     margin: auto;
 }
 .sobremi h2{
-    color: gold;
+    color: rgb(180, 153, 3);
     font-size: 48px;
     font-family: 'Ringteous';
     text-align: center;
@@ -139,7 +139,7 @@ html{
     line-height: 22px;
 }
 .sobremi .contenido-seccion p span{
-    color: #1cb698;
+    color:  #586e68;
     font-weight: bold;
 }
 .sobremi .fila{
@@ -162,11 +162,11 @@ html{
 }
 .sobremi .fila .col ul li strong{
     display: inline-block;
-    color: #1cb698;
+    color: #586e68;
     width: 130px;
 }
 .sobremi .fila .col ul li span{
-    background-color: #1cb698;
+    background-color:  #586e68;
     padding: 3px;
     font-weight: bold;
     border-radius: 5px;
@@ -188,5 +188,215 @@ html{
     transition: 0.5s;
 }
 .sobremi .fila .col .contenedor-intereses .interes:hover{
-    background-color: #1cb698;
+    background-color: rgb(180, 153, 3);
+}
+.sobremi button{
+    cursor: pointer;
+    width: fit-content;
+    background-color:transparent;
+    border: 2px solid #fff;
+    margin: 20px auto;
+    display: block;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+.sobremi button .overlay{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgb(180, 153, 3);
+    z-index: -1;
+    transition: 1s;
+}
+.sobremi button:hover .overlay{
+    width: 100%;
+}
+.skills-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espacio entre columnas */
+  }
+  
+  .skills-section .col-1, 
+  .skills-section .col-2 {
+    flex: 1; /* Ajusta el ancho automáticamente */
+  }
+  
+  .col-1, .col-2 {
+    width: 50%; /* Cada una ocupa la mitad del contenedor */
+    padding: 20px; /* Espaciado interno opcional */
+    box-sizing: border-box; /* Evita que el padding afecte el ancho */
+}
+  .skills-section .barra-skill {
+    position: relative;
+    height: 30px;
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    margin-bottom: 15px; /* Espaciado entre barras */
+  }
+  
+  .skills-section .progreso {
+    height: 100%;
+    width: 0%;
+    background-color: #063159;
+    /* background-image: url('img/matrix.gif'); Cambia la ruta según la imagen */
+    background-size: cover;
+    transition: width 1s ease-in-out;
+  }
+  
+  .skills-section .progreso span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  .proyectos h3{
+    text-align: center;
+    padding: 24px;
+    font-size: 28px;
+    font-family: 'Ringteous';
+  }
+
+  .proyectos-realizados {
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;  /* Centra los botones horizontalmente */
+    align-items: center;      /* Centra verticalmente (si es necesario) */
+    flex-wrap: wrap;          /* Permite que los botones pasen a la siguiente línea si es necesario */
+    gap: 15px;                /* Espacio entre botones */
+}
+
+.proyectos-realizados button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.proyectos-realizados button img {
+    width: 220px;  /* Ajusta el tamaño de la imagen */
+    height: 200px;
+    border-radius: 10px; /* Opcional: agrega bordes redondeados */
+    transition: transform 0.3s ease;
+}
+
+.proyectos-realizados button:hover img {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+}
+.proyectos .proyectos-realizados .sintesis{
+    text-align: left;
+    font-family: 'Ringteous';
+    color: #586e68;
+    justify-content: space-between;
+    max-width: 265px;   /*Limita el ancho del texto */
+    text-align: center;
+}
+
+/* Estilos generales */
+.contacto {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Estilo de los campos */
+.campo {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Estilo de los inputs */
+.campo input{
+    width: 25%;
+    height: 40px;
+    padding: 10px;
+    margin-top: 10px; /* Espacio para el texto encima */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.campo textarea {
+    width: 25%;
+    height: 90px;
+    padding: 10px;
+    margin-top: 10px; /* Espacio para el texto encima */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Posicionamiento de los textos (span) */
+.campo span {
+    position: absolute;
+    top: -15px; /* Coloca el texto sobre el campo de entrada */
+    left: 445px;
+    font-size: 14px;
+    color: #666;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+/* Cuando el campo está enfocado o tiene texto */
+.campo input:focus + .contacto-boton span,
+.campo textarea:focus + .contacto-boton span,
+.campo input:not(:placeholder-shown) + .contacto-boton span,
+.campo textarea:not(:placeholder-shown) + .contacto-boton span {
+    opacity: 1;
+}
+
+/* Estilo del botón */
+.contacto .contacto-boton {
+    position:absolute;
+    height: 50px;
+    width: 150px;
+    left: 530px;
+    overflow: hidden;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.contacto .contacto-boton:hover {
+    background-color: #0056b3;
+}
+
+/* Animación del círculo */
+.contacto .contacto-boton::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.contacto .contacto-boton:active::before {
+    width: 300%;
+    height: 300%;
+}
+
+.contacto .contacto-boton span {
+    position: relative;
+    z-index: 1;
 }

@@ -2,17 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script> <!-- Conexión con JavaScript -->
+    
 </head>
 <body>
     <!--menu encabezado-->
     <div class="contenedor-header" >
         <header>
             <div class="logo">
-                <a href="#">Joaquín</a>
+                <a href="#">JOAQUÍN</a>
             </div>
             <nav id="nav">
                 <ul>
@@ -38,9 +40,8 @@
         <h2>Tecnico en Desarrollo Web</h2>
         <div  class="redes">
             <a href="https://github.com/JRproyects"><i class="fa-brands fa-github"></i></a>
-            <a href="https://github.com/JRproyects"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://github.com/JRproyects" ><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/joaquin-ruiz-10a5672a1/" ><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:rj45redd@gmail.com?subject=Consulta%20sobre%20colaboración%20o%20proyecto&body=Hola,%20me%20gustaría%20contactarte%20para%20discutir%20una%20posible%20colaboración.%20Por%20favor,%20avísame%20si%20estás%20disponible%20para%20hablar.%20Gracias."><i class="fa-regular fa-envelope"></i></a>
+            <a href="www.linkedin.com/in/joaquin-ruiz-209145342"><i class="fa-brands fa-linkedin"></i></a>
         </div>
     </div>
 
@@ -50,7 +51,9 @@
 <section id="sobremi" class="sobremi">
     <div class="contenido-seccion" >
         <h2>SOBRE MI</h2>
-        <p><span>Hola soy Joaquín Ruiz.</span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed architecto culpa ratione illum nostrum quibusdam veniam incidunt enim blanditiis reprehenderit, magni cumque necessitatibus et ipsam nobis tempore neque similique. Repudiandae!</p>
+        <p><span>Hola soy Joaquín Ruiz. Soy técnico agropecuario y estudiante de la Tecnicatura Universitaria en Desarrollo Web en la Universidad Nacional del Comahue, con experiencia en soporte técnico y redes avanzadas. Actualmente, brindo soporte a empresas nacionales e internacionales del sector petrolero, trabajando con tecnologías como MikroTik y SD-WAN.
+
+            Complemento mi formación con proyectos en programación, desafíos en ciberseguridad (TryHackMe, CTFs) y lecturas técnicas. Mi objetivo es combinar el desarrollo de aplicaciones web con el manejo y diseño de infraestructuras de redes, apuntando a un futuro en el ámbito de la ciberseguridad y la automatización.</p>
     <div class="fila">
         <!--DATOS PERSONALES-->
         <div class="col">
@@ -62,7 +65,7 @@
                 </li>
                 <li>
                     <strong>Teléfono</strong>
-                    2994567489
+                    +54-4567489
                 </li>
                 <li>
                     <strong>Email</strong>
@@ -74,7 +77,7 @@
                 </li>
                 <li>
                     <strong>Direccion</strong>
-                example a casa 1
+                Neuquén, Neuquén Argentina.
             </li>
             <li> 
                 <strong>Cargo</strong>
@@ -90,10 +93,10 @@
             <div class="contenedor-intereses">
                 <div class="interes">
                     <i class="fa-solid fa-gamepad"></i>
-                    <span>juegos</span>
+                    <span>networking</span>
                     </div>
                 <div class="interes"><i class="fa-solid fa-code"></i>
-                    <span>programing</span>
+                    <span>programacion</span>
                 </div>
                 <div class="interes"><i class="fa-brands fa-readme"></i>
                     <span>lectura</span></div>
@@ -108,11 +111,135 @@
          </div>
     </div>
     </div>
-    <div class="cv">
-            <i class="fa-solid fa-download"></i>
-            <link rel="stylesheet" href="img/JOAQUINRUIZ_CV.pdf">
-    
+    <button>
+        Descarga CV <i class="fa-solid fa-download"></i>
+        <span class="overlay"></span>
+    </button>
+    <div class="skills-section">
+        <div class="col-1">
+          <h3>SKILLS DE PROGRAMACION</h3>
+          <span>HTML-5</span>
+          <div class="barra-skill">
+            <div class="progreso" data-percentage="75">
+              <span>75%</span>
+            </div>
+          </div>
+          <span>CSS</span>
+          <div class="barra-skill">
+            <div class="progreso" data-percentage="60">
+              <span>60%</span>
+            </div>
+          </div>
+          <span>PHP</span>
+          <div class="barra-skill">
+            <div class="progreso" data-percentage="80">
+              <span>80%</span>
+            </div>
+          </div>
+          <span>JavaScript</span>
+          <div class="barra-skill">
+            <div class="progreso" data-percentage="90">
+              <span>90%</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-2">
+          <h3>SKILLS DE REDES</h3>
+          <span>MikroTik</span>
+          <div class="barra-skill">
+            <div class="progreso" data-percentage="70">
+              <span>70%</span>
+            </div>
+          </div>
+          <span>SD-WAN</span>
+          <div class="barra-skill">
+            <div class="progreso" data-percentage="65">
+              <span>65%</span>
+            </div>
+          </div>
+          <span>Switch</span>
+          <div class="barra-skill">
+            <div class="progreso" data-percentage="50">
+              <span>50%</span>
+            </div>
+          </div>
+          <span>Routers</span>
+          <div class="barra-skill">
+            <div class="progreso" data-percentage="85">
+              <span>85%</span>
+            </div>
+          </div>
+        </div>
     </div>
-</section>
-</body>
-</html>
+         <div class="proyectos">
+            <h3>Proyectos destacados</h3>
+            <div class="proyectos-realizados">
+                <button onclick="window.location.href='#'">
+                    <img src="img/Captura de pantalla_28-1-2025_134511_.jpeg" alt="Proyecto 1">
+                </button>
+                <button onclick="window.location.href='#'">
+                    <img src="img/Captura de pantalla_28-1-2025_134511_.jpeg" alt="Proyecto 2">
+                </button>
+                <button onclick="window.location.href='#'">
+                    <img src="img/Captura de pantalla_28-1-2025_134511_.jpeg" alt="Proyecto 3">
+                </button>
+                <button onclick="window.location.href='#'">
+                    <img src="img/Captura de pantalla_28-1-2025_134511_.jpeg" alt="Proyecto 4">
+                 </button>
+               
+                <div class="sintesis">     
+                    <span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque, necessitatibus quam inventore facilis nam expedita animi. 
+                    Dolorem blanditiis quaerat nisi. Ipsam laborum dignissimos autem quas cupiditate enim ullam perspiciatis!
+                    </span>
+                </div>
+                <div class="sintesis">
+                    <span>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque, necessitatibus quam inventore facilis nam expedita animi. Dolorem blanditiis quaerat nisi. Ipsam laborum dignissimos autem quas cupiditate enim ullam perspiciatis!
+                    </span>
+                </div>
+            
+                 <div class="sintesis">
+                    <span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque, necessitatibus quam inventore facilis nam expedita animi. Dolorem blanditiis quaerat  nisi. Ipsam laborum dignissimos autem quas cupiditate enim ullam perspiciatis!
+                    </span>
+                </div>
+                 <div class="sintesis">
+                     <span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque, necessitatibus quam inventore facilis nam expedita animi. Dolorem blanditiis quaerat nisi. Ipsam laborum dignissimos autem quas cupiditate enim ullam perspiciatis!
+                    </span>
+                </div>
+
+
+             
+            </div>
+
+            <div class="contacto">
+                <h3>CONTACTESE</h3>
+                <div class="campo">
+                    <span>Nombre</span>
+                    <input type="text" id="nombre">
+                </div>
+                <div class="campo">
+                    <span>Teléfono</span>
+                    <input type="text" id="telefono">
+                </div>
+                <div class="campo">
+                    <span>Email</span>
+                    <input type="email" id="email">
+                </div>
+                <div class="campo">
+                    <span>Mensaje</span>
+                    <textarea id="mensaje"></textarea>
+                </div>
+        
+                <div class="contacto-boton" onclick="enviarMensaje()">
+                    <span id="boton-texto">Enviar mensaje</span>
+                </div>
+            </div>
+                
+
+            </div>
+        </div>
+    </div>   
