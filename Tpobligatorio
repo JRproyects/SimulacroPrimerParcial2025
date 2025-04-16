@@ -1,0 +1,40 @@
+<?php
+/**
+ * @param int = sueldoD
+ */
+$sueldoD=  650000;
+$sueldoJ= 480000;
+$sueldoE= 0;
+$sueldoE_1 = 350000;
+$sueldoE_2 = 300000;
+$categoria= 0;
+$puesto =0;
+function sueldos($puesto,$categoria,$sueldoE_2,$sueldoE_1,$sueldoE,$sueldoJ,$sueldoD){
+    echo"introducir su puesto; si es director 1, si es jefe 2 y si es empleado 3; ". "\n";
+    $puesto=trim(fgets(STDIN));
+if ($puesto==3){
+    echo"ingrese su categoria: ". "\n";
+    $categoria=trim(fgets(STDIN));
+    if ($puesto==3 && $categoria==1){
+        $sueldoE= $sueldoE_1;
+    }else{
+        $sueldoE=$sueldoE_2;
+    }}
+   echo"ingrese sus años de antiguedad ". "\n"; 
+    $antiguedad=trim(fgets(STDIN));
+    if ($puesto==1){ 
+        $sueldocalculo=$sueldoD;}
+    elseif ($puesto==2){
+        $suedocalculo=$sueldoJ;}
+    elseif ($puesto==3){
+        $sueldocalculo=$sueldoE;}
+    
+    if ($antiguedad>15){
+        $sueldofinal=$sueldocalculo*1.1;
+    }else{
+    $sueldofinal=$sueldocalculo;
+
+}
+echo"su sueldo final es; $".$sueldofinal. "\n";
+}
+echo"".sueldos($puesto,$categoria,$sueldoE_2,$sueldoE_1,$sueldoE,$sueldoJ,$sueldoD);
