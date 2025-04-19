@@ -1,0 +1,119 @@
+🔹 Clases a implementar
+1. Cliente
+Atributos:
+
+nombre
+
+apellido
+
+tipoDocumento
+
+numeroDocumento
+
+activo (booleano)
+
+Métodos:
+
+Constructor
+
+Getters y setters
+
+Método __toString() que devuelva una descripción legible del cliente.
+
+Método darDeBaja() que cambia el estado a inactivo.
+
+2. Auto
+Atributos:
+
+patente
+
+marca
+
+modelo
+
+anio
+
+costoPorDia
+
+activo (booleano)
+
+Métodos:
+
+Constructor
+
+Getters y setters
+
+Método __toString() con toda la info.
+
+Método darDeBaja() que lo marca como inactivo.
+
+3. Alquiler
+Atributos:
+
+cliente (objeto)
+
+auto (objeto)
+
+dias
+
+fecha (string)
+
+precioFinal
+
+Métodos:
+
+Constructor
+
+Método calcularPrecio() que devuelva el precio final (dias * costoPorDia)
+
+__toString() con el resumen del alquiler
+
+4. EmpresaAlquiler
+Atributos:
+
+nombre
+
+direccion
+
+clientes (colección)
+
+autos (colección)
+
+alquileres (colección)
+
+Métodos:
+
+Constructor
+
+registrarAlquiler($tipoDoc, $numDoc, $patente, $dias)
+
+Valida que el cliente y el auto estén activos.
+
+Crea un alquiler y lo guarda si todo es correcto.
+
+Devuelve el precio o -1 si hay error.
+
+retornarAlquileresDeCliente($tipoDoc, $numDoc)
+
+Devuelve array de alquileres de ese cliente.
+
+__toString() que muestre nombre, dirección, cantidad de autos, clientes y alquileres.
+
+🧪 Requisitos del testeo (test.php)
+Crear una empresa.
+
+Crear al menos 2 autos y 2 clientes.
+
+Realizar al menos 3 intentos de alquiler (uno debe fallar).
+
+Imprimir el resultado de cada alquiler.
+
+Mostrar los alquileres de cada cliente.
+
+Mostrar la información final de la empresa.
+
+🔚 Extra (si querés sumar puntos)
+Implementar un método darDeBajaAutoPorPatente($patente) en la empresa.
+
+Agregar una validación para que un auto no pueda alquilarse si ya está alquilado (asumimos un solo alquiler activo por auto).
+
