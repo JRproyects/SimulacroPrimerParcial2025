@@ -98,4 +98,4 @@ echo $fecha->mostrarFechaExtendida();
 echo $fecha->incrementarFecha(105);
 
 
-//150 dias a incrementar desde 1 de enero evaluar primero si es bisiesto el año,  luego segun eso 
+//150 dias a incrementar desde 1 de enero evaluar primero si es bisiesto el año,  luego segun es
