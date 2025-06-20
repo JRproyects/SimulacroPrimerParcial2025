@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Datos Personales con Array</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Array con los datos personales (ordenados como se van a mostrar)
+      var datos = [
+        "Nombre: Juan",
+        "Apellido: Perez",
+        "Estado civil: Soltero",
+        "Edad: 27 años",
+        "Fecha de nacimiento: 10-09-1998",
+        "DNI: 56.147.258"
+      ];
+
+      // Mostrar los datos con formato
+      document.write("Datos Personales<br>");
+      for (var i = 0; i < datos.length; i++) {
+        document.write(datos[i] + "<br>");
+      }
+    </script>
+  </body>
+</html>

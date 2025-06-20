@@ -1,0 +1,12 @@
+<script>
+    let agente = navigator.userAgent.toLowerCase();
+    if (agente.includes("firefox")) {
+        window.location.href = "http://www.mozilla.com/firefox/";
+    } else if (agente.includes("msie") || agente.includes("trident")) {
+        window.location.href = "http://www.microsoft.com/ie";
+    } else if (agente.includes("konqueror")) {
+        window.location.href = "http://konqueror.org";
+    } else {
+        document.write("Browser desconocido");
+    }
+</script>

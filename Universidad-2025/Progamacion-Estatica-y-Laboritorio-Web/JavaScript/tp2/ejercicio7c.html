@@ -1,0 +1,13 @@
+<div id="fx"></div>
+<script>
+    function calcularFuncion() {
+        let div = document.getElementById("fx");
+        let texto = "";
+        for (let x = 0; x < 100; x++) {
+            let fx = 3 * x + 5 - x * x;
+            texto += `f(${x}) = ${fx}\n`;
+        }
+        div.innerText = texto;
+    }
+    window.onload = calcularFuncion;
+</script>

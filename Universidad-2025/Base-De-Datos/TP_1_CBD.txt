@@ -1,0 +1,6 @@
+ENCARGADO:nombre, apellido, tipo de documento, número de documento, edad, teléfono, dirección, categoría y legajo
+SALA: nombre, cantidad de asientos, tipo de sala, encargado, -->ASIENTO: numero, fila
+PELICULAS: duracion, temática, nombre, cantidad de veces emitida, 
+FUNCIONES: numero, fecha, hora de emicion 
+CLIENTES: nombre, apellido, edad teléfono, correo, condición fiscal
+ENTRADA:nuemeroU, funcion, asisto designado, 

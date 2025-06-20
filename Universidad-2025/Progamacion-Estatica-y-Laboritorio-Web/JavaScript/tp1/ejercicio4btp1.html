@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Operaciones básicas con dos números</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Pedir dos números al usuario
+      var num1 = parseFloat(prompt("Ingrese el primer número:"));
+      var num2 = parseFloat(prompt("Ingrese el segundo número:"));
+
+      // Calcular operaciones
+      var suma = num1 + num2;
+      var resta = num1 - num2;
+      var multiplicacion = num1 * num2;
+      var division;
+
+      // Controlar división por cero
+      if (num2 !== 0) {
+        division = num1 / num2;
+      } else {
+        division = "No se puede dividir por cero";
+      }
+
+      // Mostrar resultados en la página con saltos de línea
+      document.write("Resultados:<br>");
+      document.write("Suma: " + suma + "<br>");
+      document.write("Resta: " + resta + "<br>");
+      document.write("Multiplicación: " + multiplicacion + "<br>");
+      document.write("División: " + division + "<br>");
+    </script>
+  </body>
+</html>

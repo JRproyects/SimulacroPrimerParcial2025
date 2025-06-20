@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Árbol Desplegable</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        .provincia {
+            cursor: pointer;
+        }
+
+        .subrayado {
+            text-decoration: underline;
+        }
+
+        .ciudades {
+            margin-left: 20px;
+        }
+
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Provincias y Ciudades</h2>
+
+    <ul>
+        <li>
+            <span class="provincia" onclick="toggle(this)">
+                <span class="simbolo">-</span> <span class="nombre">Neuquén</span>
+            </span>
+            <ul class="ciudades">
+                <li>Neuquén</li>
+                <li>Zapala</li>
+                <li>San Martín</li>
+                <li>Junín</li>
+            </ul>
+        </li>
+        <li>
+            <span class="provincia" onclick="toggle(this)">
+                <span class="simbolo">-</span> <span class="nombre">Río Negro</span>
+            </span>
+            <ul class="ciudades">
+                <li>Cipolletti</li>
+                <li>Fernández Oro</li>
+                <li>Roca</li>
+                <li>Cinco Saltos</li>
+                <li>Allen</li>
+            </ul>
+        </li>
+        <li>
+            <span class="provincia" onclick="toggle(this)">
+                <span class="simbolo">-</span> <span class="nombre">Buenos Aires</span>
+            </span>
+            <ul class="ciudades">
+                <li>La Plata</li>
+                <li>Mar del Plata</li>
+                <li>Necochea</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        function toggle(elementoProvincia) {
+            const ciudades = elementoProvincia.nextElementSibling;
+            const simbolo = elementoProvincia.querySelector('.simbolo');
+            const nombre = elementoProvincia.querySelector('.nombre');
+
+            // Alternar visibilidad
+            if (ciudades.classList.contains('oculto')) {
+                ciudades.classList.remove('oculto');
+                simbolo.textContent = "-";
+                nombre.classList.remove('subrayado');
+            } else {
+                ciudades.classList.add('oculto');
+                simbolo.textContent = "+";
+                nombre.classList.add('subrayado');
+            }
+        }
+    </script>
+
+</body>
+</html>

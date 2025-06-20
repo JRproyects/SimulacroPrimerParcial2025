@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora con valorSeleccionado</title>
+    <script src="EjJavaScript005.js"></script> <!-- Funciones matemáticas -->
+</head>
+<body>
+    <h2>Calculadora</h2>
+
+    <!-- Botones para cada operación -->
+    <button onclick="calcular('suma')">Suma</button>
+    <button onclick="calcular('resta')">Resta</button>
+    <button onclick="calcular('multiplicacion')">Multiplicación</button>
+    <button onclick="calcular('division')">División</button>
+    <button onclick="calcular('potencia')">Potencia</button>
+    <button onclick="calcular('cuadrado')">Cuadrado</button>
+    <button onclick="calcular('factorial')">Factorial</button>
+
+    <br><br>
+
+    <!-- Área de resultado -->
+    <textarea id="resultado" rows="5" cols="50" readonly></textarea>
+
+    <script>
+        // Función valorSeleccionado
+        function valorSeleccionado(valor) {
+            if (valor < 0) return -1;
+            else if (valor >= 0 && valor < 10) return 0;
+            else if (valor >= 10 && valor < 50) return 1;
+            else if (valor >= 50 && valor < 100) return 2;
+            else return 3;
+        }
+
+        // Función calcular
+        function calcular(op) {
+            let x = parseFloat(prompt("Ingrese el primer número:"));
+            let y = null;
+            let res = null;
+
+            if (op !== 'cuadrado' && op !== 'factorial') {
+                y = parseFloat(prompt("Ingrese el segundo número:"));
+            }
+
+            switch (op) {
+                case 'suma':
+                    res = suma(x, y);
+                    break;
+                case 'resta':
+                    res = resta(x, y);
+                    break;
+                case 'multiplicacion':
+                    res = multiplicacion(x, y);
+                    break;
+                case 'division':
+                    res = division(x, y);
+                    break;
+                case 'potencia':
+                    res = potencia(x, y);
+                    break;
+                case 'cuadrado':
+                    res = cuadrado(x);
+                    break;
+                case 'factorial':
+                    res = factorial(x);
+                    break;
+            }
+
+            // Solo muestra la categoría si el resultado es numérico
+            let categoria = (typeof res === 'number') ? valorSeleccionado(res) : "N/A";
+            document.getElementById("resultado").value =
+                `Resultado: ${res}\nCategoría: ${categoria}`;
+        }
+
+        // Función factorial agregada para integrarla al menú
+        function factorial(n) {
+            if (n === 0) return 1;
+            else return n * factorial(n - 1);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+ Calcula la cardinalidad de las siguientes relaciones binarias:
+(a) Hombre est´a casado con Mujer, en una sociedad monog´amica. 1 a 1
+(b) Hombre est´a casado con Mujer, en una sociedad machista polig´amica.1 a m 
+(c) Hombre est´a casado con Mujer, en una sociedad polig´amica liberal. n a m 
+(d) Pescador pesca Pez.1 a m (dado que un pescador puede pescar muchos peses)
+(e) Arquitecto dise˜na Edificios. 1 a m
+(f) Piezas forman Producto. m a 1
+(g) Turista viaja Hotel. m a n (debería ser m a n dado que muchos turistas vijan y el hotel resive a varios turistas)
+(h) Jugador juega en Equipo.m a n (dado que los jugadores pueden jugar en muchos equipos, y en los equipos pueden jugar muchos jugadores)
+(i) Presidente gobierna en Pa´ıs.1 a 1
+(j) Para cada uno de los incisos del ejercicio anterior, clasifique las relaciones seg´un su
+grado y su cardinalidad. 
+--------------------------------------------

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CHAT</title>
+</head>
+<body>
+  <h1>CHAT</h1>
+  <hr>
+
+  <!-- Formulario de ingreso -->
+  <label>Nombre</label>
+  <input type="text" id="nombre"><br>
+
+  <textarea id="mensaje" rows="5" cols="60"></textarea>
+  <button onclick="enviarMensaje()">Enviar Mensaje</button>
+
+  <!-- Zona donde se mostrarán los mensajes -->
+  <div id="chat"></div>
+
+  <script>
+    function enviarMensaje() {
+      // Obtener valores
+      const nombre = document.getElementById("nombre").value.trim();
+      const mensaje = document.getElementById("mensaje").value.trim();
+
+      // Validar que no esté vacío
+      if (nombre === "" || mensaje === "") {
+        alert("Por favor, complete el nombre y el mensaje.");
+        return;
+      }
+
+      // Obtener fecha y hora actual
+      const ahora = new Date();
+      const fecha = ahora.getDate() + "/" + (ahora.getMonth() + 1) + "/" + ahora.getFullYear();
+      const hora = ahora.getHours() + ":" + ahora.getMinutes() + ":" + ahora.getSeconds();
+
+      // Crear el bloque del mensaje
+      const nuevoMensaje = "<p><i>" + fecha + " " + hora + " por " + nombre + "</i><br>" + mensaje + "</p>";
+
+      // Agregarlo al chat (concatenación con +=)
+      document.getElementById("chat").innerHTML += nuevoMensaje;
+
+      // Limpiar el textarea y poner el foco de nuevo
+      const area = document.getElementById("mensaje");
+      area.value = "";
+      area.focus();
+    }
+  </script>
+</body>
+</html>

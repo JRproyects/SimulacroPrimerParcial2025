@@ -1,0 +1,14 @@
+tengo que hacer: 
+buscar, incio, login, carrito,
+luego en la parte de abajo tendrá que tener 
+incio productos quienes somos guía de talles como comprar contacto.
+.....................
+PHP generalmente se utiliza para:
+
+Conectarse con bases de datos (como MySQL)
+
+Manejar formularios (por ejemplo, enviar datos de contacto)
+
+Crear sesiones de usuario y login
+
+Mostrar contenido dinámico según condiciones

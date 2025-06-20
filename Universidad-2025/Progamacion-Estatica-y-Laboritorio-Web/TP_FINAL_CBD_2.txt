@@ -1,0 +1,164 @@
+3.1 – Definición de Tablas 
+
+CREATE TABLE PERSONA (
+    numDoc INT,
+    tipoDoc VARCHAR(10),
+    numTelefono VARCHAR(20),
+    fechaNac DATE,
+    apellido VARCHAR(50),
+    nombre VARCHAR(50),
+    PRIMARY KEY (numDoc, tipoDoc)
+);
+
+CREATE TABLE ENCARGADO (
+    numDoc INT,
+    tipoDoc VARCHAR(10),
+    legajo INT,
+    categoria VARCHAR(30),
+    diccEncargado TEXT,
+    PRIMARY KEY (numDoc, tipoDoc),
+    FOREIGN KEY (numDoc, tipoDoc) REFERENCES PERSONA(numDoc, tipoDoc)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE CLIENTE (
+    numDoc INT,
+    tipoDoc VARCHAR(10),
+    condFiscal VARCHAR(30),
+    CorreoCliente VARCHAR(100),
+    PRIMARY KEY (numDoc, tipoDoc),
+    FOREIGN KEY (numDoc, tipoDoc) REFERENCES PERSONA(numDoc, tipoDoc)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE SALA (
+    nombreSala VARCHAR(50) PRIMARY KEY,
+    tipoSala VARCHAR(20),
+    cantAsistios INT
+);
+
+CREATE TABLE ASIENTO (
+    nombreSala VARCHAR(50),
+    numAsiento INT,
+    fila CHAR(1),
+    PRIMARY KEY (nombreSala, numAsiento),
+    FOREIGN KEY (nombreSala) REFERENCES SALA(nombreSala)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE PELICULA (
+    idPelicula INT PRIMARY KEY,
+    tematica VARCHAR(100),
+    duracion INT,
+    fechaEmision DATE,
+    nombrePeli VARCHAR(100)
+);
+
+CREATE TABLE FUNCION (
+    nroFuncion INT PRIMARY KEY,
+    horaFuncion TIME,
+    FechaFuncion DATE,
+    nombreSala VARCHAR(50),
+    idPelicula INT,
+    tipoDniEncargado VARCHAR(10),
+    nroDocEncargado INT,
+    FOREIGN KEY (nombreSala) REFERENCES SALA(nombreSala)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE,
+    FOREIGN KEY (idPelicula) REFERENCES PELICULA(idPelicula)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    FOREIGN KEY (nroDocEncargado, tipoDniEncargado) REFERENCES ENCARGADO(numDoc, tipoDoc)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE ENTRADA (
+    nroFuncion INT,
+    nroEntrada INT,
+    fechaDeCompra DATE,
+    nombreSala VARCHAR(50),
+    numAsiento INT,
+    numDocCliente INT,
+    tipoDocCliente VARCHAR(10),
+    PRIMARY KEY (nroFuncion, nroEntrada),
+    FOREIGN KEY (nroFuncion) REFERENCES FUNCION(nroFuncion)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    FOREIGN KEY (nombreSala, numAsiento) REFERENCES ASIENTO(nombreSala, numAsiento)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE,
+    FOREIGN KEY (numDocCliente, tipoDocCliente) REFERENCES CLIENTE(numDoc, tipoDoc)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE PREFIERE (
+    idPelicula INT,
+    numDoc INT,
+    PRIMARY KEY (idPelicula, numDoc),
+    FOREIGN KEY (idPelicula) REFERENCES PELICULA(idPelicula)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    FOREIGN KEY (numDoc) REFERENCES CLIENTE(numDoc)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+);
+
+
+
+3.2 – Justificación de las políticas de claves foráneas
+
+
+| Relación  | Clave Foránea | Políticas  | Justificación                                                             |
+| --------- | ------------- | ---------- | ------------------------------------------------------------------------- |
+| ENCARGADO | PERSONA       | `CASCADE`  | Si se elimina una persona, también debe eliminarse su rol como encargado. |
+| CLIENTE   | PERSONA       | `SET NULL` | Puede eliminarse la persona y dejar cliente con NULL temporalmente.       |
+| ASIENTO   | SALA          | `CASCADE`  | Si se elimina la sala, sus asientos se eliminan automáticamente.          |
+| FUNCION   | PELICULA      | `CASCADE`  | Si se elimina una película, sus funciones se eliminan.                    |
+| FUNCION   | SALA          | `SET NULL` | Se puede mantener la función sin sala (para reprogramar).                 |
+| FUNCION   | ENCARGADO     | `SET NULL` | El encargado puede cambiar.                                               |
+| ENTRADA   | FUNCION       | `CASCADE`  | Si se borra la función, se eliminan sus entradas.                         |
+| ENTRADA   | ASIENTO       | `RESTRICT` | No se permite borrar un asiento con entradas vendidas.                    |
+| PREFIERE  | CLIENTE       | `SET NULL` | Si se borra cliente, se mantiene el registro con NULL.                    |
+
+4.1 – Inserciones 
+
+-- PERSONA
+INSERT INTO PERSONA VALUES (101, 'DNI', '123456789', '1990-01-01', 'Gomez', 'Juan');
+INSERT INTO PERSONA VALUES (102, 'DNI', '987654321', '1985-06-15', 'Perez', 'Ana');
+
+-- ENCARGADO
+INSERT INTO ENCARGADO VALUES (101, 'DNI', 1001, 'Supervisor', 'infoEncargado');
+INSERT INTO ENCARGADO VALUES (102, 'DNI', 1002, 'Asistente', 'info2');
+
+-- CLIENTE
+INSERT INTO CLIENTE VALUES (102, 'DNI', 'Responsable Inscripto', 'ana@correo.com');
+INSERT INTO CLIENTE VALUES (101, 'DNI', 'Monotributo', 'juan@correo.com');
+
+-- SALA
+INSERT INTO SALA VALUES ('Sala A', '2D', 100);
+INSERT INTO SALA VALUES ('Sala B', '3D', 80);
+
+-- ASIENTO
+INSERT INTO ASIENTO VALUES ('Sala A', 1, 'A');
+INSERT INTO ASIENTO VALUES ('Sala A', 2, 'A');
+
+-- PELICULA
+INSERT INTO PELICULA VALUES (1, 'Comedia', 120, '2024-05-01', 'Risas Locas');
+INSERT INTO PELICULA VALUES (2, 'Terror', 90, '2024-06-15', 'Miedo Profundo');
+
+-- FUNCION
+INSERT INTO FUNCION VALUES (1, '18:00:00', '2024-06-01', 'Sala A', 1, 'DNI', 101);
+INSERT INTO FUNCION VALUES (2, '20:00:00', '2024-06-01', 'Sala A', 2, 'DNI', 102);
+
+-- ENTRADA
+INSERT INTO ENTRADA VALUES (1, 100, '2024-05-25', 'Sala A', 1, 101, 'DNI');
+INSERT INTO ENTRADA VALUES (1, 101, '2024-05-25', 'Sala A', 2, 102, 'DNI');
+
+-- PREFIERE
+INSERT INTO PREFIERE VALUES (1, 101);
+INSERT INTO PREFIERE VALUES (2, 102);

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Agenda</title>
+</head>
+<body>
+
+  <h1>Agenda</h1>
+
+  <!-- Formulario -->
+  <form id="formulario">
+    <label>nombre</label>
+    <input type="text" id="nombre">
+    <label>direccion</label>
+    <input type="text" id="direccion">
+    <label>ciudad</label>
+    <input type="text" id="ciudad">
+    <label>telefono</label>
+    <input type="text" id="telefono">
+    <br><br>
+    <button type="button" onclick="agregarRegistro()">Nuevo Registro</button>
+  </form>
+
+  <br><hr><br>
+
+  <!-- Tabla -->
+  <table border="1" id="tabla">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Direccion</th>
+        <th>Ciudad</th>
+        <th>Telefono</th>
+        <th>Operacion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Se insertan los registros dinámicamente -->
+    </tbody>
+  </table>
+
+  <script>
+    // Array de datos inicial
+    var a = [];
+    a[0] = ["Juan Pérez", "Av. Argentina 3000", "Neuquén Capital", "154888888"];
+    a[1] = ["Tito Sánchez", "Av. Del Trabajador 300", "Neuquén Capital", "154555555"];
+    a[2] = ["Cecilia Carrizo", "Sierra Grande 900", "Neuquén Capital", "4485895"];
+    a[3] = ["Pedro González", "Amaranto Suarez 1254", "Neuquén Capital", "4420444"];
+    a[4] = ["Verónica Lozano", "Saturnino Torres 100", "Neuquén Capital", "5425842"];
+
+    // Función que inicializa la tabla con el array
+    function cargarTabla() {
+      const cuerpo = document.querySelector("#tabla tbody");
+      cuerpo.innerHTML = ""; // limpia la tabla antes de volver a llenarla
+
+      for (let i = 0; i < a.length; i++) {
+        const fila = document.createElement("tr");
+
+        // Agregar celdas
+        for (let j = 0; j < 4; j++) {
+          const celda = document.createElement("td");
+          celda.textContent = a[i][j];
+          fila.appendChild(celda);
+        }
+
+        // Celda "Borrar"
+        const celdaBorrar = document.createElement("td");
+        const enlace = document.createElement("a");
+        enlace.href = "#";
+        enlace.textContent = "borrar";
+        enlace.style.color = "blue";
+        enlace.onclick = function () {
+          borrarRegistro(i);
+          return false;
+        };
+        celdaBorrar.appendChild(enlace);
+        fila.appendChild(celdaBorrar);
+
+        cuerpo.appendChild(fila);
+      }
+    }
+
+    // Función para borrar un registro
+    function borrarRegistro(indice) {
+      a.splice(indice, 1); // elimina el registro del array
+      cargarTabla(); // actualiza la tabla
+    }
+
+    // Función para agregar un nuevo registro desde el formulario
+    function agregarRegistro() {
+      const nombre = document.getElementById("nombre").value;
+      const direccion = document.getElementById("direccion").value;
+      const ciudad = document.getElementById("ciudad").value;
+      const telefono = document.getElementById("telefono").value;
+
+      // Validación simple
+      if (nombre && direccion && ciudad && telefono) {
+        a.push([nombre, direccion, ciudad, telefono]); // agrega al array
+        cargarTabla(); // recarga la tabla
+
+        // Limpia los campos del formulario
+        document.getElementById("formulario").reset();
+      } else {
+        alert("Por favor completá todos los campos.");
+      }
+    }
+
+    // Cargar tabla al inicio
+    cargarTabla();
+  </script>
+
+</body>
+</html>

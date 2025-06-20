@@ -1,0 +1,12 @@
+<div id="pares"></div>
+<script>
+    function mostrarPares() {
+        let div = document.getElementById("pares");
+        let contenido = "";
+        for (let i = 0; i < 500; i += 2) {
+            contenido += i + " ";
+        }
+        div.innerText = contenido;
+    }
+    window.onload = mostrarPares;
+</script>

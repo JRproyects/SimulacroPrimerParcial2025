@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Validar CUIT</title>
+</head>
+<body>
+  <h1>Validador de CUIT</h1>
+
+  <label for="cuit">Ingrese su CUIT (sin guiones):</label>
+  <input type="text" id="cuit" maxlength="11">
+  <button onclick="verificarCuit()">Verificar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    // Función principal
+    function verificarCuit() {
+      const cuit = document.getElementById("cuit").value;
+      const esValido = validarCUIT(cuit);
+      const resultado = document.getElementById("resultado");
+
+      if (esValido) {
+        resultado.textContent = "CUIT válido ✅";
+        resultado.style.color = "green";
+      } else {
+        resultado.textContent = "CUIT inválido ❌";
+        resultado.style.color = "red";
+      }
+    }
+
+    // Función que valida el CUIT
+    function validarCUIT(cuit) {
+      // 1. Verifica que tenga exactamente 11 dígitos numéricos
+      if (!/^\d{11}$/.test(cuit)) return false;
+
+      // 2. Aplica algoritmo de validación
+      const multiplicadores = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2];
+      let suma = 0;
+
+      for (let i = 0; i < 10; i++) {
+        suma += parseInt(cuit.charAt(i)) * multiplicadores[i];
+      }
+
+      let resto = suma % 11;
+      let verificador = 11 - resto;
+
+      if (verificador === 11) verificador = 0;
+      if (verificador === 10) verificador = 9;
+
+      return verificador === parseInt(cuit.charAt(10));
+    }
+  </script>
+</body>
+</html>

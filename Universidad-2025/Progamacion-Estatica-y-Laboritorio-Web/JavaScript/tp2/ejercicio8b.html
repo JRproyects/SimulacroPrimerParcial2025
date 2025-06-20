@@ -1,0 +1,21 @@
+<style>
+    .oculto { display: none; }
+    .subrayado { text-decoration: underline; cursor: pointer; }
+</style>
+
+<ul>
+    <li>
+        <span onclick="toggle('neuquen')" class="subrayado">Neuquén</span>
+        <ul id="neuquen">
+            <li>Neuquén</li>
+            <li>Zapala</li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    function toggle(id) {
+        const ul = document.getElementById(id);
+        ul.classList.toggle("oculto");
+    }
+</script>

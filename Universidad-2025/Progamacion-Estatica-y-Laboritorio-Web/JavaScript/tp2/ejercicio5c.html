@@ -1,0 +1,33 @@
+<!-- conversor.html -->
+<!DOCTYPE html>
+<html>
+<head><title>Conversor Monetario</title></head>
+<body>
+    <h2>Conversor Monetario</h2>
+    <button onclick="convertir('pesosDolares')">Pesos a Dólares</button>
+    <button onclick="convertir('dolaresPesos')">Dólares a Pesos</button>
+    <button onclick="convertir('pesosReales')">Pesos a Reales</button>
+    <button onclick="convertir('realesPesos')">Reales a Pesos</button>
+    <button onclick="convertir('pesosEuros')">Pesos a Euros</button>
+    <button onclick="convertir('eurosPesos')">Euros a Pesos</button>
+    <br><br>
+    <textarea id="conversion" rows="5" cols="50" readonly></textarea>
+
+    <script>
+        const tasas = {
+            pesosDolares: 0.0011,
+            dolaresPesos: 900,
+            pesosReales: 0.005,
+            realesPesos: 200,
+            pesosEuros: 0.00095,
+            eurosPesos: 1050
+        };
+
+        function convertir(tipo) {
+            let cantidad = parseFloat(prompt("Ingrese la cantidad:"));
+            let resultado = cantidad * tasas[tipo];
+            document.getElementById("conversion").value = "Resultado: " + resultado.toFixed(2);
+        }
+    </script>
+</body>
+</html>

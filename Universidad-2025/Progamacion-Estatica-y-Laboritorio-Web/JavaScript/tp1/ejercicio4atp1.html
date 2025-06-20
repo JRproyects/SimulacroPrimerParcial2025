@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ingreso de Datos Personales</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Pedir datos al usuario
+      var nombre = prompt("Ingrese su Nombre:");
+      var apellido = prompt("Ingrese su Apellido:");
+      var estadoCivil = prompt("Ingrese su Estado civil:");
+      var edad = prompt("Ingrese su Edad:");
+      var fechaNacimiento = prompt("Ingrese su Fecha de nacimiento (dd-mm-aaaa):");
+      var dni = prompt("Ingrese su DNI:");
+
+      // Mostrar datos en la página con saltos de línea <br>
+      document.write("Datos Personales<br>");
+      document.write("Nombre: " + nombre + "<br>");
+      document.write("Apellido: " + apellido + "<br>");
+      document.write("Estado civil: " + estadoCivil + "<br>");
+      document.write("Edad: " + edad + " años<br>");
+      document.write("Fecha de nacimiento: " + fechaNacimiento + "<br>");
+      document.write("DNI: " + dni + "<br>");
+
+      // Mostrar mensaje final
+      alert("Sus datos han sido impresos");
+    </script>
+  </body>
+</html>

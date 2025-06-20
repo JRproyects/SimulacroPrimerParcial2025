@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Procesador de Mensaje</title>
+</head>
+<body>
+    <h1>Procesador de Mensajes</h1>
+    <p>Ingresá un mensaje y mirá cómo se transforma:</p>
+
+    <input type="text" id="mensaje" placeholder="Escribí tu mensaje">
+    <button onclick="procesarMensaje()">Procesar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function procesarMensaje() {
+            const mensaje = document.getElementById("mensaje").value;
+            let resultado = "";
+
+            // 1. Mayúscula
+            resultado += "<p><strong>Mayúsculas:</strong> " + mensaje.toUpperCase() + "</p>";
+
+            // 2. Minúscula
+            resultado += "<p><strong>Minúsculas:</strong> " + mensaje.toLowerCase() + "</p>";
+
+            // 3. Substring desde posición 5, largo 10
+            const subMensaje = mensaje.substring(4, 14); // index base 0
+            resultado += "<p><strong>Submensaje (posición 5, largo 10):</strong> " + subMensaje + "</p>";
+
+            // 4. Si incluye "hola"
+            if (mensaje.toLowerCase().includes("hola")) {
+                resultado += "<p><strong>Contiene 'hola':</strong> hola que tal</p>";
+            } else {
+                resultado += "<p><strong>Contiene 'hola':</strong> No</p>";
+            }
+
+            // 5. Sin espacios y sin la palabra "hola"
+            const sinEspacios = mensaje.replace(/\s/g, "").replace(/hola/gi, "");
+            resultado += "<p><strong>Sin espacios y sin 'hola':</strong> " + sinEspacios + "</p>";
+
+            // 6. Traducción parcial al inglés
+            let traducido = mensaje;
+            const traducciones = {
+                "hola": "hello",
+                "nombre": "name",
+                "mi": "my",
+                "yo": "I",
+                "soy": "am"
+            };
+
+            // reemplaza cada palabra si existe en el mensaje
+            for (const [es, en] of Object.entries(traducciones)) {
+                const regex = new RegExp("\\b" + es + "\\b", "gi");
+                traducido = traducido.replace(regex, en);
+            }
+
+            resultado += "<p><strong>Traducción parcial al inglés:</strong> " + traducido + "</p>";
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

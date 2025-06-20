@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ingreso de Datos Personales con Array</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Crear un array vacío para los datos
+      var datos = [];
+
+      // Pedir datos al usuario y guardarlos en el array
+      datos[0] = prompt("Ingrese su Nombre:");
+      datos[1] = prompt("Ingrese su Apellido:");
+      datos[2] = prompt("Ingrese su Estado civil:");
+      datos[3] = prompt("Ingrese su Edad:");
+      datos[4] = prompt("Ingrese su Fecha de nacimiento (dd-mm-aaaa):");
+      datos[5] = prompt("Ingrese su DNI:");
+
+      // Imprimir encabezado
+      document.write("Datos Personales<br>");
+
+      // Etiquetas para imprimir junto a los datos
+      var etiquetas = [
+        "Nombre: ",
+        "Apellido: ",
+        "Estado civil: ",
+        "Edad: ",
+        "Fecha de nacimiento: ",
+        "DNI: "
+      ];
+
+      // Recorrer el array e imprimir cada dato con su etiqueta
+      for (var i = 0; i < datos.length; i++) {
+        // Para edad, agrego " años" al final
+        if (i === 3) {
+          document.write(etiquetas[i] + datos[i] + " años<br>");
+        } else {
+          document.write(etiquetas[i] + datos[i] + "<br>");
+        }
+      }
+
+      // Mensaje final
+      alert("Sus datos han sido impresos");
+    </script>
+  </body>
+</html>

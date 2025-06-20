@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head><title>Meses</title></head>
+<body>
+    <h2>Meses del año</h2>
+    <ul id="lista"></ul>
+
+    <script>
+        const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
+                       "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+        // Usando for
+        function conFor() {
+            const ul = document.getElementById("lista");
+            for (let i = 0; i < meses.length; i++) {
+                let li = document.createElement("li");
+                li.textContent = meses[i];
+                ul.appendChild(li);
+            }
+        }
+
+        window.onload = conFor;  // Llama a conFor cuando se carga la página
+    </script>
+</body>
+</html>
+
+<!-- ara los otros bucles (while, do while, for in), simplemente reemplazás el bloque for por:
+
+ while
+
+ let i = 0;
+while (i < meses.length) {
+    let li = document.createElement("li");
+    li.textContent = meses[i];
+    ul.appendChild(li);
+    i++;
+}
+
+do while
+
+let i = 0;
+do {
+    let li = document.createElement("li");
+    li.textContent = meses[i];
+    ul.appendChild(li);
+    i++;
+} while (i < meses.length);
+
+for in
+
+for (let i in meses) {
+    let li = document.createElement("li");
+    li.textContent = meses[i];
+    ul.appendChild(li);
+}
+
+-->

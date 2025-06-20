@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    padding: 0;
+    margin: 0;
+    font-family: sans,lucida 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 11px;
+    background-color: #fff;
+    text-decoration-color: black;
+}
+#linkList {
+  width: 20%;
+  float: left;
+}
+
+#intro, #supportingText, #extraDiv1, #extraDiv2 {
+  width: 80%;
+  float: right;
+}
+#pageHeader h2 {
+  padding: 15px;
+  border: 1px solid gray;
+  margin-top: -10px;
+  position: relative;
+  z-index: 1;
+}
+#lresources ul {
+  list-style: none;
+  background-color: #9cf;
+  padding: 0;
+}
+
+#lresources a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #036;
+}
+
+#lresources a:hover {
+  background-color: #036;
+  color: #9cf;
+}
+#larchives {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#larchives li {
+  display: inline-block;
+}
+
+#larchives li:first-child {
+  float: left;
+}
+
+#larchives li:nth-child(2) {
+  float: right;
+}
+
+#larchives li:nth-child(3) {
+  clear: both;
+  display: block;
+  text-align: center;
+}
+#lselect li {
+  list-style-image: url('blue_bullet.gif');
+}
+
+#pageHeader h1 {
+  background-image: url('css_zen_garden.gif');
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  color: transparent;
+  height: 60px; /* Ajustar según el tamaño de la imagen */
+  overflow: hidden;
+}
+
+#pageHeader h2 {
+  background-image: url('zen_h2_back.gif');
+  background-position: top;
+  background-repeat: repeat-x;
+  background-color: #489AED;
+}

@@ -1,0 +1,13 @@
+<ul id="colores">
+    <li onmouseover="cambiarFondo('white')">Blanco</li>
+    <li onmouseover="cambiarFondo('black')">Negro</li>
+    <li onmouseover="cambiarFondo('blue')">Azul</li>
+    <li onmouseover="cambiarFondo('red')">Rojo</li>
+    <li onmouseover="cambiarFondo('yellow')">Amarillo</li>
+</ul>
+
+<script>
+    function cambiarFondo(color) {
+        document.getElementById("colores").style.backgroundColor = color;
+    }
+</script>

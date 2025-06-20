@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Guía de Talles</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Guía de Talles</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="quienes-somos.html">Quiénes somos</a>
+            <a href="guia-de-talles.html">Guía de talles</a>
+            <a href="como-comprar.html">Cómo comprar</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <form id="talleForm">
+            <label>Altura (cm): <input type="number" id="altura" required></label><br>
+            <label>Peso (kg): <input type="number" id="peso" required></label><br>
+            <button type="submit">Recomendar talle</button>
+        </form>
+        <p id="resultadoTalle"></p>
+    </main>
+    <script src="js/talles.js"></script>
+</body>
+</html>

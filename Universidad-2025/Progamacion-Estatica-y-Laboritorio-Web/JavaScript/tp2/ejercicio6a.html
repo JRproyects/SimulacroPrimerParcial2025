@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Autenticación</title>
+</head>
+<body>
+    <button onclick="pedirContrasena()">Mostrar Datos Personales</button>
+    <div id="datos" style="display: none;">
+        <h3>Nombre: Juan Pérez</h3>
+        <p>Edad: 22</p>
+        <p>Email: juanperez@example.com</p>
+    </div>
+
+    <script>
+        function pedirContrasena() {
+            let clave = prompt("Ingrese la contraseña:");
+            if (clave === "minombre") {
+                document.getElementById("datos").style.display = "block";
+            } else {
+                alert("Contraseña incorrecta.");
+            }
+        }
+    </script>
+</body>
+</html>

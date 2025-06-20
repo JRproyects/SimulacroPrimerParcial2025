@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Verificador de Palíndromos</title>
+</head>
+<body>
+  <h1>¿Es un palíndromo?</h1>
+
+  <label for="frase">Ingrese una frase:</label>
+  <input type="text" id="frase" size="50">
+  <button onclick="verificarPalindromo()">Verificar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function verificarPalindromo() {
+      const frase = document.getElementById("frase").value;
+      const esPalindromo = esPalindromoFrase(frase);
+      const resultado = document.getElementById("resultado");
+
+      if (esPalindromo) {
+        resultado.textContent = "✅ ¡Es un palíndromo!";
+        resultado.style.color = "green";
+      } else {
+        resultado.textContent = "❌ No es un palíndromo.";
+        resultado.style.color = "red";
+      }
+    }
+
+    function esPalindromoFrase(cadena) {
+      // Eliminar espacios, signos y pasar a minúsculas
+      const limpia = cadena
+        .toLowerCase()
+        .replace(/[^a-záéíóúüñ0-9]/gi, ''); // quita espacios y signos
+
+      // Comparar con su reverso
+      const reversa = limpia.split("").reverse().join("");
+      return limpia === reversa;
+    }
+  </script>
+</body>
+</html>

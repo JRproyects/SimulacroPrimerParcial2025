@@ -1,0 +1,195 @@
+CSS 4
+
+---
+
+### 🔧 **Preparación**
+
+1. Crear el archivo CSS (ej: `estilos.css`).
+2. Vincularlo en el `<head>` del HTML:
+
+```html
+<link rel="stylesheet" href="estilos.css">
+```
+
+---
+
+### ✅ **Ejercicio 1**
+
+> Aplicar al elemento `<body>`:
+
+```css
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans, "lucida grande", tahoma, verdana, sans-serif;
+  font-size: 11px;
+  background-color: white;
+  color: black;
+}
+```
+
+#### 📌 Explicación:
+
+* `margin: 0;` y `padding: 0;` → Quita el espacio por defecto del navegador.
+* `font-family` → Define una lista de fuentes. Se usa así para asegurar compatibilidad entre distintos sistemas.
+* `font-size: 11px;` → Establece un tamaño fijo de texto.
+* `background-color: white;` → Establece el fondo blanco.
+* `color: black;` → Texto en negro.
+
+---
+
+### ✅ **Ejercicio 2**
+
+#### 📌 Para el layout (posición lateral):
+
+```css
+#linkList {
+  width: 20%;
+  float: left;
+}
+
+#intro, #supportingText, #extraDiv1, #extraDiv2 {
+  width: 80%;
+  float: right;
+}
+```
+
+* `float: left;` → Mueve `#linkList` a la izquierda.
+* `width: 20%;` / `width: 80%;` → Proporción del layout (sidebar + contenido).
+
+#### 📌 Para `#pageHeader h1`:
+
+```css
+#pageHeader h1 {
+  padding: 10px;
+  border: 1px solid black;
+  background-color: #ddd;
+  position: relative;
+  z-index: 2;
+}
+```
+
+#### 📌 Para `#pageHeader h2`:
+
+```css
+#pageHeader h2 {
+  padding: 15px;
+  border: 1px solid gray;
+  margin-top: -10px;
+  position: relative;
+  z-index: 1;
+}
+```
+
+#### 📌 Explicación:
+
+* `padding` → Espacio interno.
+* `border` → Bordes como se indica.
+* `margin-top: -10px` → Hace que el `h1` se solape 10px sobre el `h2`.
+* `position: relative` y `z-index` → Ayudan al solapamiento.
+
+---
+
+### ✅ **Ejercicio 3**
+
+#### 📌 Lista de recursos (`#lresources`):
+
+```css
+#lresources ul {
+  list-style: none;
+  background-color: #9cf;
+  padding: 0;
+}
+
+#lresources a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #036;
+}
+
+#lresources a:hover {
+  background-color: #036;
+  color: #9cf;
+}
+```
+
+#### 📌 Explicación:
+
+* `list-style: none;` → Elimina bullets.
+* `text-decoration: none;` → Quita el subrayado de los links.
+* `font-weight: bold;` → Negrita.
+* `hover` → Cambia color de fondo y texto al pasar el mouse.
+
+#### 📌 Posicionar los ítems:
+
+```css
+#larchives {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#larchives li {
+  display: inline-block;
+}
+
+#larchives li:first-child {
+  float: left;
+}
+
+#larchives li:nth-child(2) {
+  float: right;
+}
+
+#larchives li:nth-child(3) {
+  clear: both;
+  display: block;
+  text-align: center;
+}
+```
+
+---
+
+### ✅ **Ejercicio 4**
+
+#### 📌 Reemplazar bullets con imagen:
+
+```css
+#lselect li {
+  list-style-image: url('blue_bullet.gif');
+}
+```
+
+#### 📌 Reemplazar texto `h1` por imagen:
+
+```css
+#pageHeader h1 {
+  background-image: url('css_zen_garden.gif');
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  color: transparent;
+  height: 60px; /* Ajustar según el tamaño de la imagen */
+  overflow: hidden;
+}
+```
+
+#### 📌 `h2` fondo con imagen y estilo:
+
+```css
+#pageHeader h2 {
+  background-image: url('zen_h2_back.gif');
+  background-position: top;
+  background-repeat: repeat-x;
+  background-color: #489AED;
+}
+```
+
+---
+
+### ✅ Recomendaciones Finales:
+
+* Usá `developer tools` (F12) para inspeccionar clases y ver resultados.
+* Algunas etiquetas o IDs pueden tener nombres diferentes en la versión exacta del HTML, así que verificá el MarkUp antes de aplicar estilos.
+* Podés agrupar estilos para que el CSS sea más limpio.
+
+¿Querés que te genere el archivo CSS completo con todo lo de los ejercicios?

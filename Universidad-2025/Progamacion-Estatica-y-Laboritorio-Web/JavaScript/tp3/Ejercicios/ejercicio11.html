@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fecha y Cuenta Regresiva</title>
+</head>
+<body>
+  <h1>Información de Fecha y Hora</h1>
+  <p id="fechaActual"></p>
+  <p id="tiempoRestante"></p>
+
+  <script>
+    // Mostrar la fecha y hora actual
+    const ahora = new Date();
+    document.getElementById("fechaActual").innerHTML = 
+      "Fecha actual: " + ahora.toLocaleDateString() + " " + ahora.toLocaleTimeString();
+
+    // Establecer la fecha del parcial (ejemplo: 28 de junio de 2025 a las 10:00)
+    const parcial = new Date("2025-06-17T17:00:00");
+
+    // Calcular diferencia en milisegundos
+    const diferencia = parcial - ahora;
+
+    // Convertir diferencia a días, horas, minutos y segundos
+    const segundos = Math.floor(diferencia / 1000) % 60;
+    const minutos = Math.floor(diferencia / (1000 * 60)) % 60;
+    const horas = Math.floor(diferencia / (1000 * 60 * 60)) % 24;
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+
+    // Mostrar resultado
+    document.getElementById("tiempoRestante").innerHTML =
+      "Faltan: " + dias + " días, " + horas + " horas, " + minutos + " minutos y " + segundos + " segundos para el parcial de JavaScript.";
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Árbol con ul</title>
+</head>
+<body>
+
+  <ul id="menu">
+    <li>Menu 1
+      <ul>
+        <li>Item 1
+          <ul>
+            <li>Item a</li>
+            <li>Item b</li>
+          </ul>
+        </li>
+        <li>Item 2</li>
+      </ul>
+    </li>
+    <li>Menu 2
+      <ul>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </li>
+  </ul>
+
+  <button onclick="listar()">Listar</button>
+
+  <script>
+    function listar() {
+      const raiz = document.getElementById("menu");
+      recorrerNodos(raiz);
+    }
+
+    function recorrerNodos(nodo) {
+      const hijos = nodo.childNodes;
+
+      for (let i = 0; i < hijos.length; i++) {
+        const hijo = hijos[i];
+
+        // Solo actuar si es un nodo tipo ELEMENTO (ignorar espacios y saltos de línea)
+        if (hijo.nodeType === 1) {
+          // Si tiene texto (como un <li>), mostrarlo
+          if (hijo.tagName === "LI") {
+            alert(hijo.firstChild.textContent.trim());
+            hijo.style.color = "gray";
+          }
+
+          // Llamada recursiva si el nodo tiene hijos
+          if (hijo.childNodes.length > 0) {
+            recorrerNodos(hijo);
+          }
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
